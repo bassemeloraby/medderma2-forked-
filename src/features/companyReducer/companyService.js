@@ -8,8 +8,24 @@ const getCompanies = async () => {
   return response.data;
 };
 
+//Delete Company
+const deleteCompanies = async (_id) => {
+  const response = await axios.delete(API_URL + '/' + _id);
+
+  return response.data;
+};
+
+const updateCompanies = async ({ id, companyName }) => {
+  const response = await axios.patch(
+    API_URL + '/' + id, {companyName}
+  );
+  return response.data;
+};
+
 const companiesService = {
-  getCompanies
+  getCompanies,
+  deleteCompanies,
+  updateCompanies,
 };
 
 export default companiesService;
