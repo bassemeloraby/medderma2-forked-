@@ -1,7 +1,8 @@
 import "./styles.css";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import Companies from "./pages/Derma/Companies";
+import Companies from "./pages/Companies";
+
 export default function App() {
   return (
     <div>
