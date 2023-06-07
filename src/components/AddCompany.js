@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import { addcomp } from '../../features/productReducer/ProductSlice';
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import { addComp } from "../features/companyReducer/companySlice";
 
 function AddCompany() {
-  const [companyName, setCompanyName] = useState('');
+  const [companyName, setCompanyName] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -17,13 +17,13 @@ function AddCompany() {
     e.preventDefault();
 
     dispatch(addComp({ companyName }));
-    setProductName('');
-    navigate('/companies')
+    setCompanyName("");
+    navigate("/companies");
   };
 
   return (
     <div>
-    <h2>create user</h2>
+      <h2>add company</h2>
       <Form onSubmit={companySubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Company Name</Form.Label>
@@ -45,5 +45,4 @@ function AddCompany() {
     </div>
   );
 }
-
 export default AddCompany;

@@ -1,8 +1,7 @@
 import "./styles.css";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import Companies from "./pages/Derma/Companies";
-import CompanyCard from "./pages/Derma/CompanyCard"
+import Companies from "./pages/Companies";
 
 export default function App() {
   return (
@@ -10,7 +9,6 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/companies" element={<Companies />} />
-         <Route path="/companyCard/:_id" element={<CompanyCard/>} />
       </Routes>
     </div>
   );
